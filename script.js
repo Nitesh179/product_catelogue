@@ -2,9 +2,11 @@ const products = [
     { name: "Peri Peri", category: "cashews", tag: "Cashew", price: 320, mrp: 399, img: "peri-peri-cashew.png", bestseller: false },
     { name: "Cheese", category: "cashews", tag: "Cashew", price: 320, mrp: 399, img: "cheese-cashew.png", bestseller: false },
     { name: "Pudina", category: "cashews", tag: "Cashew", price: 320, mrp: 399, img: "pudina-cashew.png", bestseller: true },
+    { name: "Cream & Onion", category: "cashews", tag: "Cashew", price: 320, mrp: 399, img: "cream-onion-cashew.png", bestseller: true },
     { name: "Tiramisu", category: "almonds", tag: "Almond", price: 260, mrp: 299, img: "tiramisu-almonds.png", bestseller: true },
     { name: "Paan", category: "almonds", tag: "Almond", price: 260, mrp: 299, img: "paan-almond.png", bestseller: false },
     { name: "Rose", category: "almonds", tag: "Almond", price: 260, mrp: 299, img: "rose-almonds.png", bestseller: false },
+    { name: "Cadbury Chocolate", category: "almonds", tag: "Almond", price: 260, mrp: 299, img: "cadbury-chocolate-almonds.png", bestseller: false },
     { name: "Almond Brittle", category: "chocolates", tag: "Chocolate", price: 99, mrp: 149, img: "almond-brittle-box.png", bestseller: true }
     // { 
     //     name: "Royal Festive Box", 
@@ -14,7 +16,6 @@ const products = [
     //     mrp: 1500, 
     //     img: "rose-almonds.png", 
     //     bestseller: true 
-    // }
 ];
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -55,8 +56,8 @@ document.addEventListener("DOMContentLoaded", function() {
                             <h3 class="product-title">${p.name}</h3>
                             <span class="product-tag">${p.tag} ${p.bestseller ? '| ⭐' : ''}</span>
                             <div class="product-price-box">
-                                <span class="selling-price">Rs ${p.price}/-</span>
-                                <span class="mrp-price">${p.mrp}/-</span>
+                                <span class="selling-price">₹ ${p.price}/-</span>
+                                <span class="mrp-price">₹ ${p.mrp}/-</span>
                             </div>
                         </div>
                     </div>
