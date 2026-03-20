@@ -2,7 +2,7 @@ const products = [
     { name: "Peri Peri", category: "cashews", tag: "Cashew", price: 320, mrp: 399, img: "peri-peri-cashew.png", bestseller: false },
     { name: "Cheese", category: "cashews", tag: "Cashew", price: 320, mrp: 399, img: "cheese-cashew.png", bestseller: false },
     { name: "Pudina", category: "cashews", tag: "Cashew", price: 320, mrp: 399, img: "pudina-cashew.png", bestseller: true },
-    { name: "Cream & Onion", category: "cashews", tag: "Cashew", price: 320, mrp: 399, img: "cream-onion-cashew.png", bestseller: true },
+    { name: "Cream & Onion", category: "cashews", tag: "Cashew", price: 320, mrp: 399, img: "cream-onion-cashew.png", bestseller: false },
     { name: "Tiramisu", category: "almonds", tag: "Almond", price: 260, mrp: 299, img: "tiramisu-almonds.png", bestseller: true },
     { name: "Paan", category: "almonds", tag: "Almond", price: 260, mrp: 299, img: "paan-almond.png", bestseller: false },
     { name: "Rose", category: "almonds", tag: "Almond", price: 260, mrp: 299, img: "rose-almonds.png", bestseller: false },
