@@ -1,13 +1,18 @@
 /* ===== DATA ===== */
 const products = [
+  // Cashews Products
   { id: 1, name: "Peri Peri Cashew", category: "cashews", tag: "Premium Cashew", price: 320, mrp: 399, img: "peri-peri-cashew.png", desc: "Our best-selling Peri Peri Cashews are roasted to perfection and coated with our secret spicy zest. A burst of flavor in every bite, perfect for snack lovers.", bestseller: false },
   { id: 2, name: "Cheese Cashew", category: "cashews", tag: "Premium Cashew", price: 320, mrp: 399, img: "cheese-cashew.png", desc: "Classic cheesy goodness on handpicked, premium cashews. Creamy, savory, and incredibly satisfying, a delight for children and cheese fans.", bestseller: false },
   { id: 3, name: "Pudina Cashew", category: "cashews", tag: "Premium Cashew", price: 320, mrp: 399, img: "pudina-cashew.png", desc: "Refreshing minty freshness combined with the crunch of premium cashews. A delightful cool flavor that's perfect for warm afternoons or as a palate cleanser.", bestseller: true },
   { id: 4, name: "Cream & Onion Cashew", category: "cashews", tag: "Premium Cashew", price: 320, mrp: 399, img: "cream-onion-cashew.png", desc: "A smooth blend of sour cream and tangy onions perfectly balanced on select premium cashews. An irresistible savory snack.", bestseller: false },
+  
+  // Alomds Products
   { id: 5, name: "Tiramisu Almonds", category: "almonds", tag: "Premium Almond", price: 260, mrp: 299, img: "tiramisu-almonds.png", desc: "Coffee infused luxury. Premium California almonds roasted and dipped in a silky tiramisu coating. A dessert in a nutshell.", bestseller: true },
   { id: 6, name: "Paan Almond", category: "almonds", tag: "Premium Almond", price: 260, mrp: 299, img: "paan-almond.png", desc: "A traditional Indian delight reinvented. The exotic flavor of sweet paan coated on crunchy almonds. An experience like no other.", bestseller: false },
   { id: 7, name: "Rose Almonds", category: "almonds", tag: "Premium Almond", price: 260, mrp: 299, img: "rose-almonds.png", desc: "The delicate aroma of exotic roses perfectly paired with crunchy almonds. A sweet, elegant, and aromatic snack for refined palates.", bestseller: false },
   { id: 8, name: "Cadbury Choco Almond", category: "almonds", tag: "Premium Almond", price: 260, mrp: 299, img: "cadbury-chocolate-almonds.png", desc: "A timeless combination. Crunchy roasted almonds coated in the smoothness of Cadbury's milk chocolate. Pure joy.", bestseller: false },
+  
+  // Choclates Products
   { id: 9, name: "Almond Brittle Box", category: "chocolates", tag: "Chocolate Treat", price: 99, mrp: 149, img: "almond-brittle-box.png", desc: "Our signature treat. Crunchy caramel brittle packed with roasted almonds and a touch of sea salt. A perfect small indulgence.", bestseller: true },
 ];
 
@@ -57,13 +62,25 @@ function renderProducts() {
   else if (activeCategory === "bestseller") filtered = products.filter(p => p.bestseller);
   else filtered = products.filter(p => p.category === activeCategory);
 
-  if (filtered.length === 0) {
+if (filtered.length === 0) {
     grid.innerHTML = `
       <div class="coming-soon">
         <div class="coming-soon-inner">
           <h2>Coming Soon</h2>
           <p>We are crafting something special for you.</p>
         </div>
+      </div>
+      <div class="custom-hamper-box">
+          <h3>🎁 Customize Your Hamper</h3>
+          <p class="text-secondary ">Tailored precisely to your budget and choice</p>
+          <div class="hamper-form">
+              <input type="number" id="hBudget" placeholder="Approx Budget (₹)">
+              <input type="number" id="hQty" placeholder="Quantity (How many hampers?)">
+              <textarea id="hDetails" placeholder="Details (e.g. Mix of Cashews & Almonds)"></textarea>
+              <button class="btn-hamper-wa" onclick="sendHamperEnquiry()">
+                  <i class="bi bi-whatsapp"></i> Send Requirement
+              </button>
+          </div>
       </div>`;
     return;
   }
@@ -107,6 +124,7 @@ function addToCart(id) {
   updateCartUI();
   renderProducts();
 }
+
 
 function removeFromCart(id) {
   const existing = cart.find(item => item.id === id);
@@ -197,19 +215,48 @@ function modalAddToCart() {
 function placeOrder() {
   if (cart.length === 0) return;
 
-  let message = "Order\n";
+  // Sirf standard emojis use kiye hain jo har phone par dikhte hain
+  let message = "📦 *NEW ORDER RECEIVED*\n";
+  message += "━━━━━━━━━━━━━━━━━━━\n\n";
+  message += "🛒 *Items Detail:*\n";
+  
   let total = 0;
   cart.forEach(item => {
     const lineTotal = item.price * item.qty;
-    message += item.name + " x " + item.qty + " (₹ " + item.price + ") = " + lineTotal + " /-\n";
+    // Bullet point ke liye simple dot ya dash use karein
+    message += `• *${item.name}* x ${item.qty} → ₹${lineTotal}\n`;
     total += lineTotal;
   });
-  message += "\nTotal amount = ₹ " + total + "/-";
 
-  const phoneNumber = "919202540083"; // Replace with your phone no.
+  message += "\n━━━━━━━━━━━━━━━━━━━\n";
+  message += `💰 *Total Bill: ₹${total}/-*`;
+
+  const phoneNumber = "919202540083"; 
   window.open("https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message), "_blank");
 }
  
+function sendHamperEnquiry() {
+    const budget = document.getElementById('hBudget').value;
+    const qty = document.getElementById('hQty').value;
+    const details = document.getElementById('hDetails').value;
+
+    if(!budget || !qty) {
+        alert("Please enter Budget and Quantity!");
+        return;
+    }
+
+    // Icons fixed for WhatsApp
+    let message = "🎁 *CUSTOM HAMPER ENQUIRY*\n";
+    message += "━━━━━━━━━━━━━━━━━━━\n\n";
+    message += `💰 *Budget:* ₹${budget}\n`;
+    message += `🔢 *Quantity:* ${qty} Nos\n`;
+    message += `📝 *Details:* ${details || 'Not specified'}\n\n`;
+    message += "━━━━━━━━━━━━━━━━━━━\n";
+    message += "Please let me know the best options.";
+
+    window.open("https://wa.me/919202540083?text=" + encodeURIComponent(message), "_blank");
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   renderCategories();
   renderProducts();
