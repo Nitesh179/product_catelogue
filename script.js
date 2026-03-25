@@ -1,16 +1,16 @@
 /* ===== DATA ===== */
 const products = [
   // Cashews Products
-  { id: 1, name: "Peri Peri Cashew", category: "cashews", tag: "Premium Cashew", price: 320, mrp: 399, img: "peri-peri-cashew.png", desc: "Our best-selling Peri Peri Cashews are roasted to perfection and coated with our secret spicy zest. A burst of flavor in every bite, perfect for snack lovers.", bestseller: false },
-  { id: 2, name: "Cheese Cashew", category: "cashews", tag: "Premium Cashew", price: 320, mrp: 399, img: "cheese-cashew.png", desc: "Classic cheesy goodness on handpicked, premium cashews. Creamy, savory, and incredibly satisfying, a delight for children and cheese fans.", bestseller: false },
-  { id: 3, name: "Pudina Cashew", category: "cashews", tag: "Premium Cashew", price: 320, mrp: 399, img: "pudina-cashew.png", desc: "Refreshing minty freshness combined with the crunch of premium cashews. A delightful cool flavor that's perfect for warm afternoons or as a palate cleanser.", bestseller: true },
-  { id: 4, name: "Cream & Onion Cashew", category: "cashews", tag: "Premium Cashew", price: 320, mrp: 399, img: "cream-onion-cashew.png", desc: "A smooth blend of sour cream and tangy onions perfectly balanced on select premium cashews. An irresistible savory snack.", bestseller: false },
+  { id: 1, wt: "200g", name: "Peri Peri Cashew", category: "cashews", tag: "Premium Cashew", price: 320, mrp: 399, img: "peri-peri-cashew.png", desc: "Our best-selling Peri Peri Cashews are roasted to perfection and coated with our secret spicy zest. A burst of flavor in every bite, perfect for snack lovers.", bestseller: false },
+  { id: 2, wt: "200g", name: "Cheese Cashew", category: "cashews", tag: "Premium Cashew", price: 320, mrp: 399, img: "cheese-cashew.png", desc: "Classic cheesy goodness on handpicked, premium cashews. Creamy, savory, and incredibly satisfying, a delight for children and cheese fans.", bestseller: false },
+  { id: 3, wt: "200g", name: "Pudina Cashew", category: "cashews", tag: "Premium Cashew", price: 320, mrp: 399, img: "pudina-cashew.png", desc: "Refreshing minty freshness combined with the crunch of premium cashews. A delightful cool flavor that's perfect for warm afternoons or as a palate cleanser.", bestseller: true },
+  { id: 4, wt: "200g", name: "Cream & Onion Cashew", category: "cashews", tag: "Premium Cashew", price: 320, mrp: 399, img: "cream-onion-cashew.png", desc: "A smooth blend of sour cream and tangy onions perfectly balanced on select premium cashews. An irresistible savory snack.", bestseller: false },
   
   // Alomds Products
-  { id: 5, name: "Tiramisu Almonds", category: "almonds", tag: "Premium Almond", price: 260, mrp: 299, img: "tiramisu-almonds.png", desc: "Coffee infused luxury. Premium California almonds roasted and dipped in a silky tiramisu coating. A dessert in a nutshell.", bestseller: true },
-  { id: 6, name: "Paan Almond", category: "almonds", tag: "Premium Almond", price: 260, mrp: 299, img: "paan-almond.png", desc: "A traditional Indian delight reinvented. The exotic flavor of sweet paan coated on crunchy almonds. An experience like no other.", bestseller: false },
-  { id: 7, name: "Rose Almonds", category: "almonds", tag: "Premium Almond", price: 260, mrp: 299, img: "rose-almonds.png", desc: "The delicate aroma of exotic roses perfectly paired with crunchy almonds. A sweet, elegant, and aromatic snack for refined palates.", bestseller: false },
-  { id: 8, name: "Cadbury Choco Almond", category: "almonds", tag: "Premium Almond", price: 260, mrp: 299, img: "cadbury-chocolate-almonds.png", desc: "A timeless combination. Crunchy roasted almonds coated in the smoothness of Cadbury's milk chocolate. Pure joy.", bestseller: false },
+  { id: 5, wt: "200g", name: "Tiramisu Almonds", category: "almonds", tag: "Premium Almond", price: 260, mrp: 299, img: "tiramisu-almonds.png", desc: "Coffee infused luxury. Premium California almonds roasted and dipped in a silky tiramisu coating. A dessert in a nutshell.", bestseller: true },
+  { id: 6, wt: "200g", name: "Paan Almond", category: "almonds", tag: "Premium Almond", price: 260, mrp: 299, img: "paan-almond.png", desc: "A traditional Indian delight reinvented. The exotic flavor of sweet paan coated on crunchy almonds. An experience like no other.", bestseller: false },
+  { id: 7, wt: "200g", name: "Rose Almonds", category: "almonds", tag: "Premium Almond", price: 260, mrp: 299, img: "rose-almonds.png", desc: "The delicate aroma of exotic roses perfectly paired with crunchy almonds. A sweet, elegant, and aromatic snack for refined palates.", bestseller: false },
+  { id: 8, wt: "200g", name: "Cadbury Choco Almond", category: "almonds", tag: "Premium Almond", price: 260, mrp: 299, img: "cadbury-chocolate-almonds.png", desc: "A timeless combination. Crunchy roasted almonds coated in the smoothness of Cadbury's milk chocolate. Pure joy.", bestseller: false },
   
   // Choclates Products
   { id: 9, name: "Almond Brittle Box", category: "chocolates", tag: "Chocolate Treat", price: 99, mrp: 149, img: "almond-brittle-box.png", desc: "Our signature treat. Crunchy caramel brittle packed with roasted almonds and a touch of sea salt. A perfect small indulgence.", bestseller: true },
@@ -99,7 +99,7 @@ if (filtered.length === 0) {
             <img src="images/${p.img}" alt="${p.name}" style="width:100%; height:100%; border-radius:8px; color: white; font-size: 24px; align-items: center; justify-content: center;">
           </div>
           <div class="card-info">
-            <h3>${p.name}</h3>
+            <h3>${p.name} ${p.wt ? `(${p.wt})` : ''}</h3>
             <span class="card-tag">${p.tag}</span>
             <div class="card-price-row">
               <span class="card-price">₹${p.price}</span>
@@ -161,7 +161,7 @@ function updateCartUI() {
         <img src="images/${item.img}" alt="${item.name}" style="width:100%; height:100%; object-fit:cover; border-radius:8px;">
         </div>
         <div>
-          <div class="cart-item-name">${item.name}</div>
+          <div class="cart-item-name">${item.name} ${item.wt ? `(${item.wt})` : ''}</div>
           <div class="cart-item-price">₹ ${item.price} × ${item.qty}</div>
         </div>
       </div>
@@ -189,7 +189,7 @@ function openModal(id) {
   const alreadyInCart = isInCart(p.id);
 
   document.getElementById("modalTag").textContent = p.tag;
-  document.getElementById("modalName").textContent = p.name;
+  document.getElementById("modalName").textContent = p.name + (p.wt ? ` (${p.wt})` : '');
   document.getElementById("modalDesc").textContent = p.desc;
   document.getElementById("modalPrice").textContent = "₹" + p.price + "/-";
   document.getElementById("modalMrp").textContent = "₹" + p.mrp + "/-";
@@ -242,7 +242,7 @@ function placeOrder() {
   cart.forEach(item => {
     const lineTotal = item.price * item.qty;
     // Bullet point ke liye simple dot ya dash use karein
-    message += `• *${item.name}* x ${item.qty} → ₹${lineTotal}\n`;
+    message += `• *${item.name} ${item.wt ? `(${item.wt})` : ''}* x ${item.qty} → ₹${lineTotal}\n`;
     total += lineTotal;
   });
 
