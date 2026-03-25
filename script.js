@@ -96,7 +96,7 @@ if (filtered.length === 0) {
         ${p.bestseller ? '<span class="best-badge">⭐ Best</span>' : ''}
         <div class="card-clickable" onclick="openModal(${p.id})">
           <div class="card-img">
-            <img src="images/${p.img}" alt="${p.name}" style="width:100%; height:100%; object-fit:cover;">
+            <img src="images/${p.img}" alt="${p.name}" style="width:100%; height:100%; border-radius:8px; color: white; font-size: 24px; align-items: center; justify-content: center;">
           </div>
           <div class="card-info">
             <h3>${p.name}</h3>
@@ -186,6 +186,7 @@ function openModal(id) {
   if (!p) return;
   currentModalProduct = p;
   const discount = getDiscount(p.price, p.mrp);
+  const alreadyInCart = isInCart(p.id);
 
   document.getElementById("modalTag").textContent = p.tag;
   document.getElementById("modalName").textContent = p.name;
@@ -193,10 +194,27 @@ function openModal(id) {
   document.getElementById("modalPrice").textContent = "₹" + p.price + "/-";
   document.getElementById("modalMrp").textContent = "₹" + p.mrp + "/-";
   document.getElementById("modalDiscount").textContent = discount + "% off";
-  document.getElementById("productModal").classList.add("open");
+  // document.getElementById("productModal").classList.add("open");
 
   document.querySelector(".modal-image").innerHTML = 
-  `<img src="images/${p.img}" style="width:100%; height:100%; object-fit:cover;">`;
+  `<img src="images/${p.img}" style="width:100%; height:100%; border-radius:8px;">`;
+
+  const modalAddBtn = document.querySelector(".btn-add-cart");
+  if (alreadyInCart) {
+    modalAddBtn.textContent = "Already in Cart";
+    modalAddBtn.disabled = true;
+    modalAddBtn.style.backgroundColor = "#333"; // Grey color
+    modalAddBtn.style.color = "#777";
+    modalAddBtn.style.cursor = "not-allowed";
+  } else {
+    modalAddBtn.textContent = "Add to Cart";
+    modalAddBtn.disabled = false;
+    modalAddBtn.style.backgroundColor = ""; // Original color (CSS se uthayega)
+    modalAddBtn.style.color = "";
+    modalAddBtn.style.cursor = "pointer";
+  }
+
+  document.getElementById("productModal").classList.add("open");
 }
 
 function closeModal() {
@@ -233,6 +251,12 @@ function placeOrder() {
 
   const phoneNumber = "919202540083"; 
   window.open("https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message), "_blank");
+
+  // Clear data from cart after placing order
+  cart = []; 
+  updateCartUI();
+  renderProducts();
+  toggleCart();
 }
  
 function sendHamperEnquiry() {
@@ -257,8 +281,11 @@ function sendHamperEnquiry() {
     window.open("https://wa.me/919202540083?text=" + encodeURIComponent(message), "_blank");
 }
 
+
+
 document.addEventListener("DOMContentLoaded", () => {
   renderCategories();
   renderProducts();
   updateCartUI();
 });
+

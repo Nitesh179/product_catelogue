@@ -734,7 +734,15 @@ h1, h2, h3 { font-family: 'Lora', serif; }
 /* Carousel Specific */
 .carousel-inner {
   border-radius: 20px;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  /* Ek fixed aspect-ratio set karein, jaise ki 16/9, 4/3, ya fixed pixel height */
+  aspect-ratio: 16 / 9; /* Images ko ek fixed vertical ratio milegi */
+}
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Images ko frame mein cover karne ke liye, Bina stretch ya squeeze kare */
+  object-position: center; /* Image ke center part par focus */
 }
 
 .shadow-gold {
@@ -798,4 +806,19 @@ h1, h2, h3 { font-family: 'Lora', serif; }
     align-items: center;
     justify-content: center;
     gap: 8px;
+}
+
+/* Disabled State for Modal Button */
+.add-to-cart-btn-large:disabled {
+  background: #333 !important; /* Premium Dark Grey */
+  color: #777 !important;
+  border: 1px solid #444;
+  cursor: not-allowed;
+  transform: none !important; /* No click animation */
+}
+
+/* Optional: In-cart check icon style */
+.btn-icon-check {
+  margin-right: 8px;
+  color: var(--primary);
 }
