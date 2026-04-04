@@ -42,7 +42,7 @@ h1, h2, h3 { font-family: 'Lora', serif; }
 
 .app-container {
   width: 100%;
-  max-width: 480px;
+  max-width: 768px;
   min-height: 100vh;
   background: var(--bg);
   position: relative;
@@ -359,10 +359,11 @@ h1, h2, h3 { font-family: 'Lora', serif; }
 .modal-content {
   background: #121212; /* Solid black background */
   width: 100%;
-  max-width: 420px;
+  max-width: 560px;
   border-radius: 1.5rem;
   overflow: hidden;
   position: relative;
+  max-height: fit-content;
   border: 1px solid var(--border);
   display: flex;
   flex-direction: column;
