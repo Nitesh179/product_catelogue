@@ -91,7 +91,7 @@
     </div>
   </div>
 
-  <!-- PRODUCT MODAL -->
+  <!-- PRODUCT MODAL
   <div id="productModal" class="modal-overlay">
     <div class="modal-content">
       <button class="modal-close" onclick="closeModal()"><i class="bi bi-x-circle"></i></button>
@@ -107,6 +107,50 @@
         </div>
         <button class="btn-add-cart" onclick="modalAddToCart()">Add to Cart</button>
       </div>
+    </div>
+  </div>
+ -->
+ <div id="productPageWrapper" class="product-page-wrapper">
+    <div class="product-page-container">
+       
+      <button class="pp-close-btn" onclick="closeProductPage()">
+        <i class="bi bi-x-circle"></i>
+      </button>
+      
+      <div class="pp-content">
+        <div class="pp-image-container">
+          </div>
+        
+        <div class="pp-details">
+          <div id="ppTag" class="pp-tag"></div>
+          <div id="ppName" class="pp-name"></div>
+          
+          <div class="pp-price-row">
+            <span id="ppPrice" class="pp-price"></span>
+            <span id="ppMrp" class="pp-mrp"></span>
+            <span id="ppDiscount" class="pp-discount"></span>
+          </div>
+          
+          <div id="ppWeightSelector" class="pp-weight-selector">
+            <button class="weight-btn disabled" disabled>100g</button>
+            <button class="weight-btn active">200g</button>
+          </div>
+
+          <div id="ppDesc" class="pp-desc"></div>
+          
+          <div class="pp-perks">
+            <div class="perk"><i class="bi bi-box-seam"></i> <span>In stock & Ready to dispatch</span></div>
+            <div class="perk"><i class="bi bi-star"></i> <span>Premium Quality Assured</span></div>
+          </div>
+
+          
+        </div>
+      </div>
+
+      <div class="pp-bottom-bar">
+        <button class="btn-add-cart pp-add-btn" onclick="ppAddToCart()">Add to Cart</button>
+      </div>
+
     </div>
   </div>
 

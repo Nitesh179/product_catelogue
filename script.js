@@ -1,19 +1,23 @@
 /* ===== DATA ===== */
 const products = [
   // Cashews Products
-  { id: 1, wt: "200g", name: "Peri Peri Cashew", category: "cashews", tag: "Premium Cashew", price: 320, mrp: 399, img: "peri-peri-cashew.png", desc: "Our best-selling Peri Peri Cashews are roasted to perfection and coated with our secret spicy zest. A burst of flavor in every bite, perfect for snack lovers.", bestseller: false },
-  { id: 2, wt: "200g", name: "Cheese Cashew", category: "cashews", tag: "Premium Cashew", price: 320, mrp: 399, img: "cheese-cashew.png", desc: "Classic cheesy goodness on handpicked, premium cashews. Creamy, savory, and incredibly satisfying, a delight for children and cheese fans.", bestseller: false },
-  { id: 3, wt: "200g", name: "Pudina Cashew", category: "cashews", tag: "Premium Cashew", price: 320, mrp: 399, img: "pudina-cashew.png", desc: "Refreshing minty freshness combined with the crunch of premium cashews. A delightful cool flavor that's perfect for warm afternoons or as a palate cleanser.", bestseller: true },
-  { id: 4, wt: "200g", name: "Cream & Onion Cashew", category: "cashews", tag: "Premium Cashew", price: 320, mrp: 399, img: "cream-onion-cashew.png", desc: "A smooth blend of sour cream and tangy onions perfectly balanced on select premium cashews. An irresistible savory snack.", bestseller: false },
+  { id: 1, wt: "200g", outofstock:false, name: "Peri Peri Cashew", category: "cashews", tag: "Premium Cashew", price: 320, mrp: 399, img: "peri-peri-cashew.png", desc: "Our best-selling Peri Peri Cashews are roasted to perfection and coated with our secret spicy zest. A burst of flavor in every bite, perfect for snack lovers.", bestseller: false },
+  { id: 2, wt: "200g", outofstock:false, name: "Cheese Cashew", category: "cashews", tag: "Premium Cashew", price: 320, mrp: 399, img: "cheese-cashew.png", desc: "Classic cheesy goodness on handpicked, premium cashews. Creamy, savory, and incredibly satisfying, a delight for children and cheese fans.", bestseller: false },
+  { id: 3, wt: "200g", outofstock:false, name: "Pudina Cashew", category: "cashews", tag: "Premium Cashew", price: 320, mrp: 399, img: "pudina-cashew.png", desc: "Refreshing minty freshness combined with the crunch of premium cashews. A delightful cool flavor that's perfect for warm afternoons or as a palate cleanser.", bestseller: true },
+  { id: 4, wt: "200g", outofstock:false, name: "Cream & Onion Cashew", category: "cashews", tag: "Premium Cashew", price: 320, mrp: 399, img: "cream-onion-cashew.png", desc: "A smooth blend of sour cream and tangy onions perfectly balanced on select premium cashews. An irresistible savory snack.", bestseller: false },
   
   // Alomds Products
-  { id: 5, wt: "200g", name: "Tiramisu Almonds", category: "almonds", tag: "Premium Almond", price: 260, mrp: 299, img: "tiramisu-almonds.png", desc: "Coffee infused luxury. Premium California almonds roasted and dipped in a silky tiramisu coating. A dessert in a nutshell.", bestseller: true },
-  { id: 6, wt: "200g", name: "Paan Almond", category: "almonds", tag: "Premium Almond", price: 260, mrp: 299, img: "paan-almond.png", desc: "A traditional Indian delight reinvented. The exotic flavor of sweet paan coated on crunchy almonds. An experience like no other.", bestseller: false },
-  { id: 7, wt: "200g", name: "Rose Almonds", category: "almonds", tag: "Premium Almond", price: 260, mrp: 299, img: "rose-almonds.png", desc: "The delicate aroma of exotic roses perfectly paired with crunchy almonds. A sweet, elegant, and aromatic snack for refined palates.", bestseller: false },
-  { id: 8, wt: "200g", name: "Cadbury Choco Almond", category: "almonds", tag: "Premium Almond", price: 260, mrp: 299, img: "cadbury-chocolate-almonds.png", desc: "A timeless combination. Crunchy roasted almonds coated in the smoothness of Cadbury's milk chocolate. Pure joy.", bestseller: false },
+  { id: 5, wt: "200g", outofstock:false, name: "Tiramisu Almonds", category: "almonds", tag: "Premium Almond", price: 260, mrp: 299, img: "tiramisu-almonds.png", desc: "Coffee infused luxury. Premium California almonds roasted and dipped in a silky tiramisu coating. A dessert in a nutshell.", bestseller: true },
+  { id: 6, wt: "200g", outofstock:false, name: "Paan Almond", category: "almonds", tag: "Premium Almond", price: 260, mrp: 299, img: "paan-almond.png", desc: "A traditional Indian delight reinvented. The exotic flavor of sweet paan coated on crunchy almonds. An experience like no other.", bestseller: false },
+  { id: 7, wt: "200g", outofstock:false, name: "Rose Almonds", category: "almonds", tag: "Premium Almond", price: 260, mrp: 299, img: "rose-almonds.png", desc: "The delicate aroma of exotic roses perfectly paired with crunchy almonds. A sweet, elegant, and aromatic snack for refined palates.", bestseller: false },
+  { id: 8, wt: "200g", outofstock:false, name: "Cadbury Choco Almond", category: "almonds", tag: "Premium Almond", price: 260, mrp: 299, img: "cadbury-chocolate-almonds.png", desc: "A timeless combination. Crunchy roasted almonds coated in the smoothness of Cadbury's milk chocolate. Pure joy.", bestseller: false },
   
   // Choclates Products
-  { id: 9, name: "Almond Brittle Box", category: "chocolates", tag: "Chocolate Treat", price: 99, mrp: 149, img: "almond-brittle-box.png", desc: "Our signature treat. Crunchy caramel brittle packed with roasted almonds and a touch of sea salt. A perfect small indulgence.", bestseller: true },
+  { id: 9, outofstock:false, name: "Almond Brittle Box", category: "chocolates", tag: "Chocolate Treat", price: 99, mrp: 149, img: "almond-brittle-box.png", desc: "Our signature treat. Crunchy caramel brittle packed with roasted almonds and a touch of caremil. A perfect small indulgence.", bestseller: true },
+  { id: 10, outofstock:false, name: "Almond Florentine", category: "chocolates", tag: "Premium Chocolate", price: 140, mrp: 199, img: "almond-florentine.png", desc: "Rich dark chocolate squares filled with a crunchy, caramelized almond center. Elegantly wrapped in gold foil for a luxurious treat.", bestseller: false },
+  { id: 11, outofstock:false, name: "Coffee Almond Brittle", category: "chocolates", tag: "Coffee Lover", price: 99, mrp: 149, img: "coffee-almond-brittle.png", desc: "A bold twist on our classic. Crunchy roasted almond brittle infused with rich, aromatic coffee and coated in premium chocolate.", bestseller: true },
+  { id: 12, outofstock:true, name: "Rose Almond Brittle", category: "chocolates", tag: "Floral Indulgence", price: 99, mrp: 149, img: "rose-almond-brittle.png", desc: "An elegant fusion of flavors. Crisp roasted almond chocolate brittle delicately flavored and garnished with aromatic dried rose petals.", bestseller: false }
+
 ];
 
 const categories = [
@@ -88,18 +92,24 @@ if (filtered.length === 0) {
   grid.innerHTML = filtered.map(p => {
     const inCart = isInCart(p.id);
     const discount = getDiscount(p.price, p.mrp);
-    return `
-      <div class="product-card">
-        <button class="card-add-btn ${inCart ? 'added' : 'not-added'}" onclick="event.stopPropagation(); ${inCart ? '' : `addToCart(${p.id})`}">
-          ${inCart ? '<i class="bi bi-check-lg"></i>' : '<i class="bi bi-plus-lg"></i>'}
+    const isOOS = p.outofstock === true; // Check if out of stock
+
+return `
+      <div class="product-card ${isOOS ? 'oos-card' : ''}">
+        <button class="card-add-btn ${isOOS ? 'oos-btn' : (inCart ? 'added' : 'not-added')}" 
+          ${isOOS ? 'disabled' : ''} 
+          onclick="event.stopPropagation(); ${!inCart && !isOOS ? `addToCart(${p.id})` : ''}">
+          ${isOOS ? '<i class="bi bi-slash-circle"></i>' : (inCart ? '<i class="bi bi-check-lg"></i>' : '<i class="bi bi-plus-lg"></i>')}
         </button>
-        ${p.bestseller ? '<span class="best-badge">⭐ Best</span>' : ''}
-        <div class="card-clickable" onclick="openModal(${p.id})">
+        
+        ${isOOS ? '<span class="oos-badge">Out of Stock</span>' : (p.bestseller ? '<span class="best-badge">⭐ Best</span>' : '')}
+        
+        <div class="card-clickable" onclick="openProductPage(${p.id})">
           <div class="card-img">
-            <img src="images/${p.img}" alt="${p.name}" style="width:100%; height:100%; border-radius:8px; color: white; font-size: 24px; align-items: center; justify-content: center;">
+            <img src="images/${p.img}" alt="${p.name}">
           </div>
           <div class="card-info">
-            <h3>${p.name} ${p.wt ? `(${p.wt})` : ''}</h3>
+            <h3>${p.name}</h3>
             <span class="card-tag">${p.tag}</span>
             <div class="card-price-row">
               <span class="card-price">₹${p.price}</span>
@@ -161,7 +171,7 @@ function updateCartUI() {
         <img src="images/${item.img}" alt="${item.name}" style="width:100%; height:100%; object-fit:cover; border-radius:8px;">
         </div>
         <div>
-          <div class="cart-item-name">${item.name} ${item.wt ? `(${item.wt})` : ''}</div>
+          <div class="cart-item-name">${item.name}</div>
           <div class="cart-item-price">₹ ${item.price} × ${item.qty}</div>
         </div>
       </div>
@@ -181,51 +191,61 @@ function toggleCart() {
 }
 
 /* ===== PRODUCT MODAL ===== */
-function openModal(id) {
+function openProductPage(id) {
   const p = products.find(item => item.id === id);
   if (!p) return;
   currentModalProduct = p;
+  
   const discount = getDiscount(p.price, p.mrp);
   const alreadyInCart = isInCart(p.id);
+  const isOOS = p.outofstock === true;
 
-  document.getElementById("modalTag").textContent = p.tag;
-  document.getElementById("modalName").textContent = p.name + (p.wt ? ` (${p.wt})` : '');
-  document.getElementById("modalDesc").textContent = p.desc;
-  document.getElementById("modalPrice").textContent = "₹" + p.price + "/-";
-  document.getElementById("modalMrp").textContent = "₹" + p.mrp + "/-";
-  document.getElementById("modalDiscount").textContent = discount + "% off";
-  // document.getElementById("productModal").classList.add("open");
+  // Inject text data (Weight is already removed from name here)
+  document.getElementById("ppTag").textContent = p.tag;
+  document.getElementById("ppName").textContent = p.name; 
+  document.getElementById("ppDesc").textContent = p.desc;
+  document.getElementById("ppPrice").textContent = "₹" + p.price;
+  document.getElementById("ppMrp").textContent = "₹" + p.mrp;
+  document.getElementById("ppDiscount").textContent = discount + "% off";
 
-  document.querySelector(".modal-image").innerHTML = 
-  `<img src="images/${p.img}" style="width:100%; height:100%; border-radius:8px;">`;
-
-  const modalAddBtn = document.querySelector(".btn-add-cart");
-  if (alreadyInCart) {
-    modalAddBtn.textContent = "Already in Cart";
-    modalAddBtn.disabled = true;
-    modalAddBtn.style.backgroundColor = "#333"; // Grey color
-    modalAddBtn.style.color = "#777";
-    modalAddBtn.style.cursor = "not-allowed";
+  // Hide weight selector for Chocolates
+  const weightSelector = document.getElementById("ppWeightSelector");
+  if (p.category === "chocolates") {
+    weightSelector.style.display = "none";
   } else {
-    modalAddBtn.textContent = "Add to Cart";
-    modalAddBtn.disabled = false;
-    modalAddBtn.style.backgroundColor = ""; // Original color (CSS se uthayega)
-    modalAddBtn.style.color = "";
-    modalAddBtn.style.cursor = "pointer";
+    weightSelector.style.display = "flex";
   }
 
-  document.getElementById("productModal").classList.add("open");
+  // Inject image
+  document.querySelector(".pp-image-container").innerHTML = 
+  `<img src="images/${p.img}" alt="${p.name}">`;
+
+  // Manage Add to Cart button state
+  const addBtn = document.querySelector(".pp-add-btn");
+  if (isOOS) {
+    addBtn.textContent = "Out of Stock";
+    addBtn.disabled = true;
+  } else if (alreadyInCart) {
+    addBtn.textContent = "Already in Cart";
+    addBtn.disabled = true;
+  } else {
+    addBtn.textContent = "Add to Cart";
+    addBtn.disabled = false;
+  }
+
+  // Slide the page in
+  document.getElementById("productPageWrapper").classList.add("open");
 }
 
-function closeModal() {
-  document.getElementById("productModal").classList.remove("open");
+function closeProductPage() {
+  document.getElementById("productPageWrapper").classList.remove("open");
   currentModalProduct = null;
 }
 
-function modalAddToCart() {
+function ppAddToCart() {
   if (currentModalProduct) {
     addToCart(currentModalProduct.id);
-    closeModal();
+    closeProductPage();
   }
 }
 
@@ -242,8 +262,7 @@ function placeOrder() {
   cart.forEach(item => {
     const lineTotal = item.price * item.qty;
     // Bullet point ke liye simple dot ya dash use karein
-    message += `• *${item.name} ${item.wt ? `(${item.wt})` : ''}* x ${item.qty} → ₹${lineTotal}\n`;
-    total += lineTotal;
+    message += `• *${item.name}* ${item.wt ? `(${item.wt})` : ''} x ${item.qty} → ₹${lineTotal}\n`;    total += lineTotal;
   });
 
   message += "\n━━━━━━━━━━━━━━━━━━━\n";
