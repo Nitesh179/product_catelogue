@@ -14,9 +14,9 @@ const products = [
   
   // Choclates Products
   { id: 9, outofstock:false, name: "Almond Brittle Box", category: "chocolates", tag: "Chocolate Treat", price: 99, mrp: 149, img: "almond-brittle-box.png", desc: "Our signature treat. Crunchy caramel brittle packed with roasted almonds and a touch of caremil. A perfect small indulgence.", bestseller: true },
-  { id: 10, outofstock:false, name: "Almond Florentine", category: "chocolates", tag: "Premium Chocolate", price: 140, mrp: 199, img: "almond-florentine.png", desc: "Rich dark chocolate squares filled with a crunchy, caramelized almond center. Elegantly wrapped in gold foil for a luxurious treat.", bestseller: false },
-  { id: 11, outofstock:false, name: "Coffee Almond Brittle", category: "chocolates", tag: "Coffee Lover", price: 99, mrp: 149, img: "coffee-almond-brittle.png", desc: "A bold twist on our classic. Crunchy roasted almond brittle infused with rich, aromatic coffee and coated in premium chocolate.", bestseller: true },
-  { id: 12, outofstock:true, name: "Rose Almond Brittle", category: "chocolates", tag: "Floral Indulgence", price: 99, mrp: 149, img: "rose-almond-brittle.png", desc: "An elegant fusion of flavors. Crisp roasted almond chocolate brittle delicately flavored and garnished with aromatic dried rose petals.", bestseller: false }
+  { id: 10, outofstock:false, name: "Almond Florentine", category: "chocolates", tag: "Premium Chocolate", price: 25, mrp: 30, img: "almond-florentine.png", desc: "Rich dark chocolate squares filled with a crunchy, caramelized almond center. Elegantly wrapped in gold foil for a luxurious treat.", bestseller: false },
+  { id: 11, outofstock:false, name: "Coffee Almond Brittle", category: "chocolates", tag: "Coffee Lover", price: 30, mrp: 149, img: "coffee-almond-brittle.png", desc: "A bold twist on our classic. Crunchy roasted almond brittle infused with rich, aromatic coffee and coated in premium chocolate.", bestseller: true },
+  { id: 12, outofstock:false, name: "Rose Almond Brittle", category: "chocolates", tag: "Floral Indulgence", price: 30, mrp: 149, img: "rose-almond-brittle.png", desc: "An elegant fusion of flavors. Crisp roasted almond chocolate brittle delicately flavored and garnished with aromatic dried rose petals.", bestseller: false }
 
 ];
 
